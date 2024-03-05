@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page One</title>
+</head>
+<body>
+    <button id="clickButton">Click Me!</button>
+    <div id = "moveArea" style="width: 200px; height: 200px; background-color: lightcoral;"></div>
+    <br><br><br>
+    <input type="text" id="keyInput">
+    <br><br><br>
+    <input type="text" id="pressInput">
+    <br><br><br>
+    <form id="myForm">
+        <input type="text" id="textInput">
+        <input type="submit" value="Submit">
+    </form>
+    <br><br><br>
+    <input type="text" id="textInput1" placeholder="Click Here">
+    <br><br><br>
+    <div style="height: 2000px; background-color: lightblue;">Scroll down</div>
+    <script>
+
+        document.getElementById('clickButton').addEventListener('click', function() {
+
+            alert('Button clicked!');
+        });
+
+       // 1.2 Mouseover
+       // Mouseover occurs when the mouse enters an element; mouseout happens when it leaves
+
+       const moveArea = document.getElementById('moveArea');
+
+       moveArea.addEventListener('mousemove', function(event) {
+
+            console.log(`Mouse conrdinates - X: ${event.clientX}, Y: ${event.clientY}`);
+
+       });
+
+    //   2.1 Keyup and Keydown
+    //       The keyup event triggers upon releasing a key, while the keydown event triggers upon pressing
+    //       a key down.
+
+    const keyInput = document.getElementById('keyInput');
+
+    keyInput.addEventListener('keydown', function() {
+
+        console.log('key pressed down!')
+
+    });
+
+    keyInput.addEventListener('keyup', function() {
+
+        console.log('Key released!');
+
+    });
+
+    // 2.2 Keypress
+    // The keypress event in JavaScript occurs when a key on the keyboard is pressed down and produces a character value. It specifically represents pressing a key that results in a character input
+
+    const pressInput = document.getElementById('pressInput');
+    pressInput.addEventListener('keypress', function(){
+
+        console.log('Key pressed!');
+
+    });
+        
+    // 3.1 Submit event
+    // Activated when a user submits the form, either by clicking a submit button or programmatically
+    // using JavaScript. This event enables developers to handle form data, perform validation, or
+    // prevent default submission behavior.
+ 
+    document.getElementById('myForm').addEventListener('submit', function(event){
+
+        event.preventDefault(); // Prevents the default form submission behavior
+        console.log('From submitted!');
+
+    });
+    
+    // 3.3 Focus event:
+    // Focus event triggers element attention (for example: clicks, tabs).
+    // These events are useful for providing visual cues, validation messages, or triggering
+    // actions when users interact with form elements
+
+    const textInput = document.getElementById('textInput1');
+
+    textInput.addEventListener('focus', function() {
+
+        console.log('Input focused');
+
+    });
+
+    textInput.addEventListener('blur', function() {
+
+        console.log('Input blurred');
+
+    });
+
+    // 4.1 Load event
+    // Used when the entire document and its dependent resources (like images and stylesheets) finish
+    // loading, indicating that the page is ready
+
+    window.addEventListener('load', function() {
+
+        console.log('page and all resources loaded');
+
+    });
+
+    // 4.2 Resize event
+    // Starts when the browser window changes size, enabling adjustments or responses
+    // to alterations in window dimensions
+
+    window.addEventListener('resize', function() {
+
+        console.log('Window resized');
+
+    });
+
+    // 4.3 Scroll event
+    // It occurs when ther is the detection of scrolling actions within the document.
+
+    window.addEventListener('scroll', function() {
+
+        console.log('Document scrolled');
+    });
+
+
+    </script>
+
+</body>
+</html>
