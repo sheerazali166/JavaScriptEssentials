@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="showmessage"></p>
+    <script>
+        function multiply(message) {
+            
+            return message; // Returns the product of a and b
+        }
+
+        document.getElementById("showmessage").innerHTML = multiply("Hard work is the key");
+
+        function outerFunction() {
+
+            const outerVar = "I am from the outer function";
+
+            function innerFunction() {
+
+                console.log(outerVar); // innerFunction can access outerVar
+            }
+
+            return innerFunction;
+        }
+
+        const closure = outerFunction();
+
+        closure(); // This will log "I am from the outer function"
+
+        sayHello(); // This works even though the function is called before it's declared
+
+        function sayHello() {
+
+            console.log("Hello!");
+        }
+
+
+        greet(); // This will result in an error
+
+        const greet = function() {
+
+            console.log("Greetings!");
+        }
+
+    </script>
+</body>
+</html>
