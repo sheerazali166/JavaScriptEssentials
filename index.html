@@ -3,31 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Essential</title>
+    <title>Weather Report</title>
 </head>
 <body>
-    <script src="app.js">
-        
-        // Define a JSON object representing information about a person
-        const personJSON = {
-            "name": "John Doe",
-            "age": 30,
-            "email": "john@example.com",
-            "address": {
-                "street": "123 Main St",
-                "city": "Anytown",
-                "country": "USA"
-            },
-            "tags": ["JavaScript", "Node.js", "Web Development"],
-            "isStudent": false,
-            "workExperience": null
-        };
+    <h1>Weather Report</h1>
+    <form id="weatherForm">
+        <label for="city">Enter City:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Get Weather</button>
+    </form>
 
-        // Convert the JSON object to a string
-        const jsonString = JSON.stringify(personJSON);
-
-        console.log(jsonString);
-
-    </script>
+    <div id="weatherInfo"></div>
+    <script src="weather_report.js"></script>
 </body>
 </html>
